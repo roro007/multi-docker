@@ -13,7 +13,7 @@ after_success:
     - docker build -t romil/multi-nginx ./nginx
     - docker build -t romil/multi-worker ./worker
 ## log in to the docker CLI#
-    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stidin
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
 ## Take these images and push them to docker hub
     - docker push romil/multi-client
