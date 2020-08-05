@@ -1,4 +1,4 @@
-FROM node:aline as builder
+FROM node:apline as builder
 WORKDIR '/app'
 COPY ./package.json ./
 RUN npm install
