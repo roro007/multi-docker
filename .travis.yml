@@ -5,7 +5,7 @@ before_install:
     - docker build -t romil/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-    - docker run -t romil/react-test -- --coverage
+    - docker run romil/react-test npm test -- --coverage
 
 after_success:
     - docker build -t romil/multi-client  ./client
