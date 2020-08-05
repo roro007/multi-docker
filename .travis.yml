@@ -2,22 +2,22 @@ sudo: required
 services:
     - docker
 before_install:
-    - docker build -t romil/react-test -f ./client/Dockerfile.dev ./client
+    - docker build -t romil618/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-    - docker run romil/react-test npm test -- --coverage
+    - docker run romil618/react-test npm test -- --coverage
 
 after_success:
-    - docker build -t romil/multi-client  ./client
-    - docker build -t romil/multi-server ./server
-    - docker build -t romil/multi-nginx ./nginx
-    - docker build -t romil/multi-worker ./worker
+    - docker build -t romil618/multi-client  ./client
+    - docker build -t romil618/multi-server ./server
+    - docker build -t romil618/multi-nginx ./nginx
+    - docker build -t romil618/multi-worker ./worker
 ## log in to the docker CLI#
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
 ## Take these images and push them to docker hub
-    - docker push romil/multi-client
-    - docker push romil/multi-nginx
-    - docker push romil/multi-server
-    - docker push romil/multi-worker
+    - docker push romil618/multi-client
+    - docker push romil618/multi-nginx
+    - docker push romil618/multi-server
+    - docker push romil618/multi-worker
 
