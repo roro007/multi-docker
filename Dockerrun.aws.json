@@ -4,8 +4,8 @@
      {
          "name": "client",
          "image": "romil618/multi-client",
-         "hostname": "true",
-         "essential": false,
+         "hostname": "client",
+         "essential": true,
          "memory": 128
 
      },
